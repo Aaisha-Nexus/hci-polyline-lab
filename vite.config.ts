@@ -7,4 +7,5 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  base: "/HCI-Mock-Lab/",
 });
