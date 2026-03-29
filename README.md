@@ -77,14 +77,15 @@ This section explains how the app intentionally applies HCI principles while pur
 - Primary interactive targets (e.g., main action buttons, primary palette swatches) are large, well-contrasted, and positioned at predictable locations, reducing movement time.
 - Frequently used controls are placed near each other and near expected cursor landing zones to shorten pointer travel.
 - Hit areas are intentionally larger than visual affordances to reduce selection error (especially on touch).
+- Toolbar is placed on the left side of the screen, reducing the chances to overshoot the target.
 
 ### Shneiderman's Golden Rules
 
-- Strive for consistency: visual styles, iconography (via react-bootstrap-icons), and interaction patterns (Chakra components) are consistent across the app.
-- Enable shortcuts: keyboard-accessible actions and accelerators are supported for power users (behavioral layer).
+- Strive for consistency: visual styles, iconography, and interaction patterns are consistent across the app.
+- Keyboard-accessible actions and accelerators are supported for power users (behavioral layer).
 - Offer informative feedback: every user action provides immediate visual/micro-interaction feedback (button ripple, color preview, animated confirmation).
 - Design dialogs for closure: actions that complete tasks show clear completion states and optional undo affordances to reduce anxiety.
-- Prevent errors and provide clear error messages with recovery options.
+- Reverability of Actions: Provides UNdo/Redo functionality.
 
 ### Emotional Design (Expressive Interface)
 
@@ -102,8 +103,8 @@ We intentionally use HCI vocabulary: "visceral", "behavioral", and "reflective" 
 
 ### Expressive Imagery
 
-- The canvas (react-konva + konva) supports layered, painterly interactions and animated elements that convey personality.
-- Color pickers (react-color) and quick palettes let users craft expressive visual outcomes—color choices are previewed immediately for visceral feedback.
+- The canvas supports layered, painterly interactions and animated elements that convey personality.
+- Color pickers and quick palettes let users craft expressive visual outcomes—color choices are previewed immediately for visceral feedback.
 
 ---
 
@@ -113,7 +114,6 @@ We intentionally use HCI vocabulary: "visceral", "behavioral", and "reflective" 
 - Canvas-based drawing and animated elements using Konva.
 - Accessible, responsive UI using Chakra UI.
 - Iconography for clear affordances via react-bootstrap-icons.
-- Unique ID management with uuid for saved artifacts.
 - Thoughtful micro-interactions and animations to increase engagement.
 
 ---
@@ -135,17 +135,11 @@ We intentionally use HCI vocabulary: "visceral", "behavioral", and "reflective" 
 
 ---
 
-## License
+## Group Member's Deployed Wesites
 
-MIT
-
----
-
-## Group Members
-
-- Minal Shahid B23110006067 — https://github.com/minalDev-git
-- Member Two — https://github.com/USERNAME-TO-REPLACE
-- Member Three — https://github.com/USERNAME-TO-REPLACE
-- Member Four — https://github.com/USERNAME-TO-REPLACE
+- Minal Shahid B23110006067 — https://minaldev-git.github.io/HCI-Mid-Lab/
+- Aaisha Iqbal B23110006001 — https://github.com/USERNAME-TO-REPLACE
+- Haleema Fatima B23110006036 — https://github.com/USERNAME-TO-REPLACE
+- Javeria Amir B23110006049 — https://github.com/USERNAME-TO-REPLACE
 
 (Please provide the real names and GitHub profile URLs for Members Two–Four and I will update this README with the correct information.)
