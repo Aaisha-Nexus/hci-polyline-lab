@@ -1,145 +1,80 @@
-# HCI-Mid-Lab
+#  HCI Mid Lab – Polyline Editor
 
-A single-page expressive interface demo built to explore emotional design and expressive interaction techniques for a Human–Computer Interaction (HCI) lab.
+##  Introduction  
+This project is developed as part of the **Human-Computer Interaction (HCI) Mid Lab**.  
+The objective was to apply the design process (Chapter 5) to build an interactive system.
 
----
-
-## One-line purpose (Packages used)
-
-- `uuid` — generate unique IDs for components, saved states, and user-created items.
-- `react-color` — provide polished, interactive color pickers for expressive controls.
-- `@types/react-color` (dev) — TypeScript types for `react-color` for safer development.
-- `react-bootstrap-icons` — lightweight vector icons to improve visual affordance and clarity.
-- `@chakra-ui/react` & `@emotion/react` — accessible, composable UI primitives and styling foundations for building responsive, themeable interfaces.
-- `@chakra-ui/cli snippet add` (npx) — add Chakra UI code snippets to speed up component scaffolding during development.
-- `react-konva` & `konva` — performant, canvas-based drawing and animation primitives for expressive imagery and micro-interactions.
+The application allows users to draw, edit, and manipulate polylines using **keyboard and mouse interactions**.
 
 ---
 
-## Table of Contents
+##  Design Process (Phase-wise)
 
-- [About](#about)
-- [Installation](#installation)
-- [Development](#development)
-- [Design & HCI Rationale](#design--hci-rationale)
-  - [Fitts' Law & Layout](#fitts-law--layout)
-  - [Shneiderman's Golden Rules](#shneidermans-golden-rules)
-  - [Emotional Design & Expressive Interface](#emotional-design--expressive-interface)
-  - [Micro-interactions, Storytelling, and Positive Surprise](#micro-interactions-storytelling-and-positive-surprise)
-  - [Accessibility & Usability](#accessibility--usability)
-- [Features](#features)
-- [License](#license)
-- [Group Members](#group-members)
+- **Phase 1 – Requirement:** Haleema Fatima (B23110006036)  
+- **Phase 2 – Analysis:** Aaisha Iqbal (B23110006001)  
+- **Phase 3 – Design / Prototype:** Javeria Amir (B23110006049)  
+- **Phase 4 – Implementation (Code + Deployment):** Minal Shahid (B23110006067)  
 
 ---
 
-## About
+##  System Functionality  
 
-This lab project demonstrates how to design an expressive, emotionally engaging UI while following HCI best practices. The app combines interactive color selection, canvas drawing/animation, and responsive components to create an interface that is both delightful and usable. The objective is to build an expressive interface that elicits emotion and communicates intent, using design patterns from emotional design research (visceral, behavioral, reflective levels).
+###  Controls
 
----
-
-## Installation
-
-1. Clone the repo
-   - git clone https://github.com/minalDev-git/HCI-Mid-Lab.git
-2. Install dependencies
-   - npm install
-   - npm install uuid
-   - npm install react-color
-   - npm install --save-dev @types/react-color
-   - npm install react-bootstrap-icons --save
-   - npm i @chakra-ui/react @emotion/react
-   - npx @chakra-ui/cli snippet add
-   - npm install react-konva konva --save
-
-(You can also run the single `npm install` after adding these to package.json; the individual commands here document the packages used for the lab.)
+| Key | Action | Description |
+|-----|--------|------------|
+| **B** | Begin | Start creating a new polyline |
+| **D** | Delete | Remove the closest point |
+| **M** | Move | Drag a point to a new location |
+| **R** | Refresh | Redraw all polylines |
+| **Q** | Quit | Clear the canvas |
+| **Ctrl + Z** | Undo | Undo last action |
+| **Ctrl + Y** | Redo | Redo last undone action |
 
 ---
 
-## Development
+###  Interaction Details  
 
-- Start the dev server:
-  - npm start
-- Build for production:
-  - npm run build
-
-The project uses Chakra UI for layout and theme primitives, React-Konva for canvas-based expressive imagery and animations, and `react-color` for color controls. `uuid` is used where persistent unique identifiers are needed.
-
----
-
-## Design & HCI Rationale
-
-This section explains how the app intentionally applies HCI principles while pursuing expressive interface goals.
-
-### Fitts' Law & Layout
-
-- Primary interactive targets (e.g., main action buttons, primary palette swatches) are large, well-contrasted, and positioned at predictable locations, reducing movement time.
-- Frequently used controls are placed near each other and near expected cursor landing zones to shorten pointer travel.
-- Hit areas are intentionally larger than visual affordances to reduce selection error (especially on touch).
-- Toolbar is placed on the left side of the screen, reducing the chances to overshoot the target.
-
-### Shneiderman's Golden Rules
-
-- Strive for consistency: visual styles, iconography, and interaction patterns are consistent across the app.
-- Keyboard-accessible actions and accelerators are supported for power users (behavioral layer).
-- Offer informative feedback: every user action provides immediate visual/micro-interaction feedback (button ripple, color preview, animated confirmation).
-- Design dialogs for closure: actions that complete tasks show clear completion states and optional undo affordances to reduce anxiety.
-- Reverability of Actions: Provides UNdo/Redo functionality.
-
-### Emotional Design (Expressive Interface)
-
-- Visceral level: the UI uses expressive imagery and joyful micro-animations (Konva-driven) to create an immediate aesthetic appeal and a friendly first impression.
-- Behavioral level: interactions are smooth and provide meaningful feedback; the user feels competent and in control.
-- Reflective level: the app evokes stories and identity through expressive visuals and the opportunity to save/share creations, giving users reasons to reflect and value their outputs.
-
-We intentionally use HCI vocabulary: "visceral", "behavioral", and "reflective" to describe emotional design and "expressive interface" to describe the way the system communicates personality through motion, color, and feedback.
-
-### Micro-interactions, Storytelling, and Positive Surprise
-
-- Micro-interactions (small transitions, hover states, animated icons) signal system state changes and reward interaction; they are designed to be subtle and not disruptive.
-- Storytelling appears through progressive reveal of tools and playful default content that helps users imagine possibilities—this lowers the barrier to exploration.
-- Positive surprise mechanisms (e.g., celebratory confetti, subtle sound cues, or an affectionate message on completion) are used sparingly to create delight without undermining usability.
-
-### Expressive Imagery
-
-- The canvas supports layered, painterly interactions and animated elements that convey personality.
-- Color pickers and quick palettes let users craft expressive visual outcomes—color choices are previewed immediately for visceral feedback.
+- **Begin Mode (B):** Click to add points and form a polyline  
+- **Delete Mode (D):** Removes the closest vertex  
+- **Move Mode (M):** Drag a point to update its position  
+- **Refresh (R):** Re-renders all polylines  
+- **Undo/Redo:** Restores previous states  
+- **Scribble (Extra):** Freehand drawing  
 
 ---
 
-## Features
+##  Data Structures Used  
 
-- Interactive color selection with immediate preview.
-- Canvas-based drawing and animated elements using Konva.
-- Accessible, responsive UI using Chakra UI.
-- Iconography for clear affordances via react-bootstrap-icons.
-- Thoughtful micro-interactions and animations to increase engagement.
+### Polylines Array
+```ts
+polylines: {
+  id: string,
+  points: number[], // [x1, y1, x2, y2, ...]
+  color: string
+}[]
 
----
+scribbles: {
+  id: string,
+  points: number[],
+  color: string
+}[]
 
-## Accessibility & Usability
+history: {
+  scribbles: Scribble[],
+  polylines: Polyline[]
+}[]
+```
+<img width="1916" height="907" alt="image" src="https://github.com/user-attachments/assets/3450dea5-c020-437c-b48f-db3724bd0010" />
 
-- Keyboard navigable: all key controls are reachable via keyboard and have visible focus states.
-- Color contrast: color themes are chosen for sufficient contrast by default; color picker warns if combinations have poor contrast.
-- ARIA roles and semantic HTML are used for assistive technologies.
-- Touch-friendly controls and sufficiently large tap targets for mobile users.
 
----
+###  Challenges and Confusions 
+- 
+- 
+- 
 
-## How to Extend
-
-- Add new micro-interactions by extending the Konva animation layers.
-- Create additional color palettes and save/load presets.
-- Build more narrative onboarding steps to guide emotional engagement for new users.
-
----
-
-## Group Member's Deployed Wesites
-
-- Minal Shahid B23110006067 — https://minaldev-git.github.io/HCI-Mid-Lab/
-- Aaisha Iqbal B23110006001 — https://github.com/USERNAME-TO-REPLACE
-- Haleema Fatima B23110006036 — https://github.com/USERNAME-TO-REPLACE
-- Javeria Amir B23110006049 — https://github.com/USERNAME-TO-REPLACE
-
-(Please provide the real names and GitHub profile URLs for Members Two–Four and I will update this README with the correct information.)
+###  How to Run
+- git clone https://github.com/minalDev-git/HCI-Mid-Lab.git
+- cd HCI-Mid-Lab
+- npm install
+- npm run dev
