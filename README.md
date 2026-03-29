@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+#  HCI Mid Lab – Polyline Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Introduction  
+This project is developed as part of the **Human-Computer Interaction (HCI) Mid Lab**.  
+The objective was to apply the design process (Chapter 5) to build an interactive system.
 
-Currently, two official plugins are available:
+The application allows users to draw, edit, and manipulate polylines using **keyboard and mouse interactions**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+##  Design Process (Phase-wise)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Phase 1 – Requirement:** Haleema Fatima (B23110006036)  
+- **Phase 2 – Analysis:** Aaisha Iqbal (B23110006001)  
+- **Phase 3 – Design / Prototype:** Javeria Amir (B23110006049)  
+- **Phase 4 – Implementation (Code + Deployment):** Minal Shahid (B23110006067)  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+##  System Functionality  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+###  Controls
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Key | Action | Description |
+|-----|--------|------------|
+| **B** | Begin | Start creating a new polyline |
+| **D** | Delete | Remove the closest point |
+| **M** | Move | Drag a point to a new location |
+| **R** | Refresh | Redraw all polylines |
+| **Q** | Quit | Clear the canvas |
+| **Ctrl + Z** | Undo | Undo last action |
+| **Ctrl + Y** | Redo | Redo last undone action |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+###  Interaction Details  
+
+- **Begin Mode (B):** Click to add points and form a polyline  
+- **Delete Mode (D):** Removes the closest vertex  
+- **Move Mode (M):** Drag a point to update its position  
+- **Refresh (R):** Re-renders all polylines  
+- **Undo/Redo:** Restores previous states  
+- **Scribble (Extra):** Freehand drawing  
+
+---
+
+##  Data Structures Used  
+
+### Polylines Array
+```ts
+polylines: {
+  id: string,
+  points: number[], // [x1, y1, x2, y2, ...]
+  color: string
+}[]
+
+scribbles: {
+  id: string,
+  points: number[],
+  color: string
+}[]
+
+history: {
+  scribbles: Scribble[],
+  polylines: Polyline[]
+}[]
 ```
+### Snapshot of the deployed site
+<img width="1916" height="907" alt="image" src="https://github.com/user-attachments/assets/3450dea5-c020-437c-b48f-db3724bd0010" />
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+###  Challenges and Confusions 
+- 
+- 
+- 
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+###  How to Run
+- git clone https://github.com/minalDev-git/HCI-Mid-Lab.git
+- cd HCI-Mid-Lab
+- npm install
+- npm run dev
